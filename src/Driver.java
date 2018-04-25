@@ -11,7 +11,7 @@ public class Driver {
 	public static void main(String[] args) throws IOException, ParseException {
 		JSONParser parser = new JSONParser();
 
-		String filePath = "C:/users/danielf/Documents/apioutput.json";
+		String filePath = "C:/users/danielf/Documents/Templates/Contagem/Contagem_MARONIJSON.json";
 		//this type of input will change once we have a selector on the form
 		try {
 			Object obj = parser.parse(new FileReader(filePath));
@@ -22,8 +22,8 @@ public class Driver {
 			JSONObject description = (JSONObject) words[0];
 			String[] file = description.get("description").toString().split("\n");
 			
-			SeekWayTemplate SWTemplate = new SeekWayTemplate(file);
-			SWTemplate.printInfo();
+			Contagem_MARONITemplate maroniTemplate = new Contagem_MARONITemplate(file);
+			maroniTemplate.printInfo();
 			
 			//the template choice  on the form determines the object created
 			
