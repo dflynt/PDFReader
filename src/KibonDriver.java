@@ -6,12 +6,12 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-public class Driver {
+public class KibonDriver {
 
-	public static void main(String[] args) throws IOException, ParseException {
+	public static void main(String[] args) throws IOException, ParseException, java.text.ParseException {
 		JSONParser parser = new JSONParser();
 
-		String filePath = "C:/users/danielf/Documents/KIBON_images/KIBON_IMAGEJSON.json";
+		String filePath = "C:/users/danielf/Documents/KIBON_images/KIBON_IMAGE2JSON.json";
 		//this type of input will change once we have a selector on the form
 		try {
 			Object obj = parser.parse(new FileReader(filePath));
@@ -22,8 +22,9 @@ public class Driver {
 			JSONObject description = (JSONObject) words[0];
 			String[] file = description.get("description").toString().split("\n");
 			
-			Contagem_MARONITemplate maroniTemplate = new Contagem_MARONITemplate(file);
-			maroniTemplate.printInfo();
+			KibonTemplate kibon = new KibonTemplate(file);
+			kibon.printInfo();
+			
 			
 			//the template choice  on the form determines the object created
 			

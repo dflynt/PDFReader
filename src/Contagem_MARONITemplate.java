@@ -82,14 +82,6 @@ public class Contagem_MARONITemplate {
 	}
 	public Box getTakerCity(String[] file) {
 		return parser.valueOnLaterLines(file, "Cidade", 6);
-		/*
-		 * Overloaded valueOnSameLine() method
-		 * 10 is an index for the file array
-		 * There are two instances of "Municipio"
-		 * We want the second one in this case
-		 * This specific "Municipio" will always come
-		 * after the first
-		 */
 	}
 	public Box getServiceProvisioningCity(String[] file) {
 		return parser.valueOnNextLine(file, "o do Servi");
